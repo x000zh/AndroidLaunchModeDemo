@@ -25,7 +25,7 @@
         app:layout_constraintTop_toBottomOf="@id/message"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
 
     <Button
         android:id="@+id/launchSingleTop"
@@ -33,21 +33,21 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchStandard"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
     <Button
         android:id="@+id/launchSingleTask"
         android:text="Launch SingleTask"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchSingleTop"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
     <Button
         android:id="@+id/launchSingleInstance"
         android:text="Launch SingleInstance"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchSingleTask"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
 
     <Button
         android:id="@+id/launchIntentFLAG_ACTIVITY_CLEAR_TOP"
@@ -55,7 +55,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchSingleInstance"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
 
     <Button
         android:id="@+id/launchIntentFLAG_ACTIVITY_BROUGHT_TO_FRONT"
@@ -63,7 +63,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchIntentFLAG_ACTIVITY_CLEAR_TOP"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
 
     <Button
         android:id="@+id/launchIntentFLAG_ACTIVITY_SINGLE_TOP"
@@ -71,7 +71,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchIntentFLAG_ACTIVITY_BROUGHT_TO_FRONT"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
 
     <Button
         android:id="@+id/launchIntentFLAG_ACTIVITY_EXCLUDE_FROM_RECENTS"
@@ -79,7 +79,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/launchIntentFLAG_ACTIVITY_SINGLE_TOP"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
 
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

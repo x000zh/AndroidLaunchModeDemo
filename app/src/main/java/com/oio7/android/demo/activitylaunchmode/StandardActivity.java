@@ -13,6 +13,8 @@ import java.util.List;
 
 public class StandardActivity extends AppCompatActivity {
 
+    private boolean isFromPaused = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class StandardActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        refreshState();
+        refreshState("onCreate");
 
         Button launchStandard = findViewById(R.id.launchStandard);
         launchStandard.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +103,7 @@ public class StandardActivity extends AppCompatActivity {
         });
     }
 
-    private void refreshState(){
+    private void refreshState(String event){
 
         String text = String.format("Now Activity is %s[%s]\n Now Task Id is %d\n",
                 this.getClass().getSimpleName(), toString(), getTaskId());
@@ -127,12 +129,27 @@ public class StandardActivity extends AppCompatActivity {
             old = "{ empty }\n";
         }
 
-        message.setText(text + "==== onNewIntent Trigger ====\n" + old);
+        message.setText(text + "==== "+ event + " ====\n" + old);
     }
 
     @Override
     public void onNewIntent(Intent intent){
         super.onNewIntent(intent);
-        refreshState();
+        refreshState("onNewIntent Trigger");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if( isFromPaused ){
+            isFromPaused = false;
+            refreshState("onResume");
+        }
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        isFromPaused = true;
     }
 }
