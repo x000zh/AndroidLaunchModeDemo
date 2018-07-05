@@ -14,6 +14,7 @@ import java.util.List;
 public class StandardActivity extends AppCompatActivity {
 
     private boolean isFromPaused = false;
+    private boolean isFromNewIntent = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,13 +136,18 @@ public class StandardActivity extends AppCompatActivity {
     @Override
     public void onNewIntent(Intent intent){
         super.onNewIntent(intent);
-        refreshState("onNewIntent Trigger");
+        isFromNewIntent = true;
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        if( isFromPaused ){
+
+        if( isFromNewIntent ){
+            isFromNewIntent = false;
+            refreshState("onNewIntent Trigger");
+        }
+        else if( isFromPaused ){
             isFromPaused = false;
             refreshState("onResume");
         }
